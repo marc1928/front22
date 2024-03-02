@@ -26,7 +26,7 @@ export default function SideBar({ style, changeStyle }) {
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tableau de bord</span></Link>
             </li>
-            {currentUser.role == "s_member" ?
+            {currentUser.role == "s_member" || currentUser.role == "admin"  ?
             <li class={isActiveMenuItem(["/Departments","/Add-Department","/Posts","/Add-Post","/All-Users","/Update-Department","/Update-Post","/Update-User"])? "nav-item active": "nav-item"}>
                 <Link class="nav-link" to="/All-Users">
                     <i class="fas fa-fw fa-user"></i>
@@ -34,7 +34,7 @@ export default function SideBar({ style, changeStyle }) {
                 </Link>
             </li>: null}
 
-            {currentUser.role == "s_member" ?
+            {currentUser.role == "s_member" || currentUser.role == "admin"  ?
             <li class={isActiveMenuItem(["/Questions"])? "nav-item active": "nav-item"}>
                 <Link class="nav-link" to="/Questions">
                 <i class="fas fa-solid fa-question"></i>
